@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genisys</title>
+  <style>
+    html{scroll-behavior:smooth;}
+    @keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00ffff88, 0 0 20px #00ffff44;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff99;
+  }
+}
+
+header h1 {
+  /* Add to the existing header h1 styles */
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+    /* Background Layers */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn.glitch.global/0194cbe7-8f4c-4862-ae08-0d397a63c14e/3d6441e9-7cd8-460a-9fce-8a2edc141816.black-and-white-geometric-1920-x-1280-wallpaper-eb9gr5pcl9upnbmj.jpg?v=1749691303656') center/cover no-repeat;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
+
+    html, body {
+      height: 167%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #000000 20%, #0a0a0a 80%) no-repeat fixed,
+                  repeating-linear-gradient(45deg,
+                    rgba(0,255,255,0.015),
+                    rgba(0,255,255,0.015) 1px,
+                    transparent 1px,
+                    transparent 20px);
+      background-blend-mode: overlay;
+      color: #ccc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffffaa;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #00ffff;
+      transition: 0.3s;
+      margin-top: 5px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 1rem .5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      border: 1px solid #00ffff;
+      color: #00ffff;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      background-color: transparent;
+      font-weight: 400;
+    }
+
+    .btn:hover {
+      background: #00ffff;
+      color: #000;
+    }
+    
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem;
+      background: #1a1a1a;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #111;
+      padding: 0.75rem;
+      border-radius: 20px;
+      border: 1px solid #222;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #00ffff;
+    }
+
+    .card p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    h2 {
+      color: #00ffff;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      color: #ccc;
+    }
+
+    .contact-form {
+      background: #111;
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+
+    .contact-form input[type="email"] {
+      padding: 0.8rem;
+      width: 60%;
+      border: 1px solid #444;
+      border-radius: 8px;
+      margin-right: 1rem;
+      background: #000;
+      color: #fff;
+    }
+
+    .contact-form input[type="email"]::placeholder {
+      color: #888;
+    }
+
+    .contact-form button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #00cccc;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #222;
+      margin-top: 4rem;
+    }
+
+    footer .cards {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Genisys</h1>
+    <p>Building elegant AI chatbots for local businesses and startups.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#subscription">Subscription</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="home">
+    <div class="cards">
+      <div class="card">
+        <h3>Smart AI Chatbots</h3>
+        <p>Ai programmed for peak customer engagement tailord to your business needs.</p>
+      </div>
+      <div class="card">
+        <h3>24/7 Service</h3>
+        <p>Chatbots can work for 24 hours 7 days/week without getting tired and will always have the same enthusiasim.</p>
+      </div>
+      <div class="card">
+        <h3>Friendly Support</h3>
+        <p>Quick and personal support for every step of your digital journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Genisys</h2>
+    <p>
+      Genisys was founded to help small and local businesses to be able to engage customer with ease and help them focus on more important business. We focus on creating modern AI chatbot
+      systems that enhance your brand's engagement. With a small, dedicated team, we prioritize quality,
+      simplicity, and fast turnaround times tailored to your goals.
+    </p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Custom AI chatbot development</li>
+      <li>Technical support and maintenance</li>
+    </ul>
+  </section>
+
+  <section class="section" id="subscription">
+    <h2>Subscription Plans</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Starter</h3>
+        <p>$49/month - Includes a basic chatbot with multiple choice questions + maintenance.</p>
+      </div>
+      <div class="card">
+        <h3>Professional</h3>
+        <p>$99/month - Full chatbot integration + maintenance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-form" id="contact">
+    <h2>Let’s Work Together</h2>
+    <p>Drop your email and we'll connect with a tailored plan for your business.</p>
+    <form action="https://formspree.io/f/mnnvddlq" method="POST">
+      <input type="email" name="Your email" placeholder="you@example.com"/>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="cards">
+      <div class="card">
+        <h3>Instagram</h3>
+        <p>@genisys</p>
+      </div>
+      <div class="card">
+        <h3>Email</h3>
+        <p>genisys.lb@gmail.com</p>
+      </div>
+      <div class="card">
+        <h3>Phone</h3>
+        <p>+961 81/960-553</p>
+      </div>
+    </div>
+    <br />
+    <p>© 2025 Genisys. All rights reserved.</p>
+  </footer>
+</body>
+</html>
