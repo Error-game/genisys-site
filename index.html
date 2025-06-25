@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+  <div class="card" data-aos="fade-up" data-aos-delay="100">
 <head>
+  <meta name="description" content="Genisys builds powerful AI chatbots for local businesses and startups. Boost your customer engagement today.">
+  <meta name="keywords" content="AI Chatbots, Business Automation, Customer Service AI, Lebanon AI, Genisys AI">
+  <meta name="author" content="Genisys Team">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Genisys</title>
   <style>
     html{scroll-behavior:smooth;}
@@ -201,6 +206,8 @@ header h1 {
       border: 1px solid #444;
       border-radius: 8px;
       margin-right: 1rem;
+      max-width: 400px;
+      margin-bottom: 1rem;
       background: #000;
       color: #fff;
     }
@@ -234,6 +241,11 @@ header h1 {
     footer .cards {
       margin-top: 2rem;
     }
+    .section:not(:last-child) {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 3rem;
+}
   </style>
 </head>
 <body>
@@ -290,11 +302,16 @@ header h1 {
       <div class="card">
         <h3>Starter</h3>
         <p>$49/month - Includes a basic chatbot with multiple choice questions + maintenance.</p>
+         <a href="#contact" class="btn">Get Started</a>
       </div>
       <div class="card">
         <h3>Professional</h3>
         <p>$99/month - Full chatbot integration + maintenance.</p>
+         <a href="#contact" class="btn">Get Started</a>
       </div>
+      <div>
+      <p title="Buttons and pre-set replies, no free-text input">Multiple choice chatbot + maintenance</p>
+    </div>
     </div>
   </section>
 
@@ -325,5 +342,7 @@ header h1 {
     <br />
     <p>© 2025 Genisys. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 </body>
 </html>
