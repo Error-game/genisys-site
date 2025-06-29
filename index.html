@@ -273,9 +273,19 @@
   <section class="section contact-form" id="contact">
     <h2>Let’s Work Together</h2>
     <p>Drop your email and we'll connect with a tailored plan for your business.</p>
-<form action="https://formsubmit.co/el/bixovi" method="POST">
-  <input type="email" name="email" placeholder="you@example.com" required />
+    <form action="https://formsubmit.co/el/bixovi" method="POST">
+  <!-- Disable CAPTCHA if you want -->
   <input type="hidden" name="_captcha" value="false" />
+
+  <!-- Set your website domain -->
+  <input type="hidden" name="_webhook" value="https://error-game.github.io/genisys-site/" />
+  
+  <!-- Optional: Redirect to a thank-you page -->
+  <input type="hidden" name="_next" value="https://error-game.github.io/genisys-site/thank-you.html" />
+
+  <!-- Email input -->
+  <input type="email" name="email" placeholder="you@example.com" required />
+
   <button type="submit">Send</button>
 </form>
   </section>
