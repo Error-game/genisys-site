@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Genisys</title>
-  <meta name="description" content="Genisys builds powerful AI chatbots for local businesses and startups. Boost your customer engagement today.">
-  <meta name="keywords" content="AI Chatbots, Business Automation, Customer Service AI, Lebanon AI, Genisys AI">
-  <meta name="author" content="Genisys Team">
+  <meta name="description" content="Genisys builds powerful AI chatbots for local businesses and startups. Boost your customer engagement today." />
+  <meta name="keywords" content="AI Chatbots, Business Automation, Customer Service AI, Lebanon AI, Genisys AI" />
+  <meta name="author" content="Genisys Team" />
   <style>
-    html { scroll-behavior: smooth; }
+    /* Reset and basics */
+    html, body {
+      background-color: #000 !important;
+      color: #ccc;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
 
-   body {
-  background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
-  color: #ccc;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100%;
-}
-
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     header, footer {
       text-align: center;
@@ -86,6 +88,7 @@
       transition: background 0.3s, color 0.3s;
       background-color: transparent;
       font-weight: 400;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -270,10 +273,11 @@
   <section class="section contact-form" id="contact">
     <h2>Let’s Work Together</h2>
     <p>Drop your email and we'll connect with a tailored plan for your business.</p>
-    <form action="https://formspree.io/f/mnnvddlq" method="POST">
-      <input type="email" name="Your email" placeholder="you@example.com" required />
-      <button type="submit">Send</button>
-    </form>
+<form action="https://formspree.io/f/mnnvddlq" method="POST">
+  <input type="email" name="email" placeholder="you@example.com" required />
+  <input type="hidden" name="_captcha" value="false" />
+  <button type="submit">Send</button>
+</form>
   </section>
 
   <footer>
